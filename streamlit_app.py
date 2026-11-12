@@ -30,7 +30,7 @@ st.set_page_config(
 
 st.title("🔧 Turbofan Engine RUL Predictor")
 st.caption("Predicts Remaining Useful Life (RUL) in operating cycles from sensor data.")
-# TODO: add your name and course
+st.caption("Thammaradee Nooritthi — AI Tools for Manufacturing Engineering, Fanshawe College")
 
 # -------------------------------------------------------------------
 # Load model and feature list (cached so it loads once)
@@ -190,8 +190,8 @@ with st.expander("ℹ️ About this model — limitations and honest disclosure"
 **Model:** Random Forest regressor with rolling-window features over 5 cycles,
 RUL labels clipped at 125, trained on 80 engines and validated on 20.
 
-**Validation performance:** RMSE ≈ 20 cycles on held-out engines. This means
-predictions of "60 cycles remaining" could realistically be anywhere from 40 to 80.
+**Validation performance:** RMSE ≈ 16.5 cycles and MAE ≈ 11.6 cycles on the 20 held-out engines
+(a naive "always predict the mean" baseline scores RMSE ≈ 41.7). This means predictions of "60 cycles remaining" could realistically be anywhere from about 45 to 75.
 
 **Threshold values (30 cycles for red, 60 cycles for yellow) are placeholders.**
 In production these would come from the maintenance team based on:
@@ -209,4 +209,4 @@ This is a class project. A production predictive-maintenance system needs
 continuous monitoring, drift detection, retraining against new data, and
 validation against your specific equipment.
     """)
-    # TODO: add your name and contact
+st.markdown("**Author:** Thammaradee Nooritthi, Fanshawe College (course project).")
